@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEX CLOUD HOST | Infraestrutura de Elite & Soluções Avançadas</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#05070a',
+                        panel: '#0d1117',
+                        panellight: '#161b22',
+                        electric: '#00d2ff',
+                        cyanblue: '#3a7bd5',
+                        cyberred: '#ff0055',
+                    },
+                    fontFamily: {
+                        mono: ['JetBrains Mono', 'Fira Code', 'Courier New', 'monospace'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #05070a;
+            color: #c9d1d9;
+            overflow-x: hidden;
+        }
+        .bg-watermark {
+            background-image: radial-gradient(rgba(0, 210, 255, 0.05) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .rr-bg-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='15' y='75' font-family='Inter, sans-serif' font-weight='900' font-size='42' fill='%2300d2ff' fill-opacity='0.045'%3ERR%3C/text%3E%3C/svg%3E");
+            background-repeat: repeat;
+        }
+        .glow-blue {
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.2);
+        }
+        .glow-blue-strong {
+            box-shadow: 0 0 45px rgba(0, 210, 255, 0.4);
+        }
+        .glow-red {
+            box-shadow: 0 0 35px rgba(255, 0, 85, 0.25);
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(0, 210, 255, 0.6);
+        }
+        .text-glow-red {
+            text-shadow: 0 0 15px rgba(255, 0, 85, 0.55);
+        }
+        .terminal-border {
+            border: 1px solid rgba(0, 210, 255, 0.25);
+        }
+        .terminal-border:hover {
+            border-color: rgba(0, 210, 255, 0.7);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #05070a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #161b22;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 210, 255, 0.2);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00d2ff;
+        }
+    </style>
+</head>
+<body class="bg-obsidian bg-watermark rr-bg-pattern min-h-screen selection:bg-electric selection:text-black">
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/551521210619?text=Olá!%20Vim%20pelo%20site%20da%20APEX%20CLOUD%20HOST%20e%20quero%20mais%20informações." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-2xl transition transform hover:scale-110 glow-blue">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-40 backdrop-blur-xl bg-obsidian/90 border-b border-gray-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo with Richie Rich Style RR Monogram -->
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-electric via-cyanblue to-electric flex items-center justify-center font-black text-black text-xl shadow-lg glow-blue tracking-tighter border-2 border-electric/60 relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition"></div>
+                    <span class="font-serif italic text-2xl tracking-tighter text-black drop-shadow-sm font-extrabold">$</span>RR
+                </div>
+                <div>
+                    <span class="text-xl sm:text-2xl font-black tracking-wider bg-gradient-to-r from-white via-gray-100 to-electric bg-clip-text text-transparent">
+                        APEX CLOUD
+                    </span>
+                    <span class="block text-[10px] font-mono font-bold text-electric tracking-widest uppercase">
+                        by 77dn [SECURE CLOUD]
+                    </span>
+                </div>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-mono font-medium">
+                <a href="#vps" class="text-gray-300 hover:text-electric transition flex items-center gap-1.5"><i class="fas fa-server text-xs"></i> VPS Windows</a>
+                <a href="#btmob" class="text-gray-300 hover:text-cyberred transition flex items-center gap-1.5"><i class="fas fa-shield-alt text-xs"></i> BTMOB 4.6</a>
+                <a href="#garantia" class="text-gray-300 hover:text-electric transition flex items-center gap-1.5"><i class="fas fa-check-circle text-xs"></i> Garantia</a>
+            </nav>
+
+            <!-- WhatsApp Action Button -->
+            <div>
+                <a href="https://wa.me/551521210619?text=Olá!%20Gostaria%20de%20conversar%20sobre%20os%20serviços%20da%20Apex%20Cloud." target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-to-r from-electric to-cyanblue text-black shadow-lg glow-blue hover:opacity-90 transition flex items-center gap-2">
+                    <i class="fab fa-whatsapp text-sm"></i> WhatsApp
+                </a>
+                <span class="block mt-1.5 text-[10px] text-gray-400 text-center font-mono">SAC: (15) 2121-0619</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-py py-24 lg:py-36 px-4 sm:px-6 lg:px-8">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(0,210,255,0.08),transparent_60%)]"></div>
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-electric/30 bg-electric/10 text-electric text-xs font-mono font-semibold mb-8 glow-blue">
+                <span class="w-2 h-2 rounded-full bg-electric animate-ping"></span>
+                <span>SYSTEM ONLINE // INFRAESTRUTURA DE ELITE</span>
+            </div>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-6 uppercase">
+                Servidores de Alta Performance & <span class="text-electric text-glow">Soluções Avançadas</span>
+            </h1>
+            <p class="text-base sm:text-xl text-gray-400 font-sans max-w-3xl mx-auto mb-10 leading-relaxed">
+                Poder absoluto, estabilidade máxima com proteção Anti-DDoS e ferramentas exclusivas com a garantia e assinatura <strong class="text-white font-mono">77DN</strong>.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 font-mono">
+                <a href="#vps" class="px-8 py-4 rounded-xl font-bold bg-electric text-black shadow-lg glow-blue hover:bg-cyan-400 transition flex items-center justify-center gap-2">
+                    <i class="fas fa-microchip"></i> Ver Planos VPS Windows
+                </a>
+                <a href="#btmob" class="px-8 py-4 rounded-xl font-bold border border-cyberred text-cyberred hover:bg-cyberred/10 transition flex items-center justify-center gap-2">
+                    <i class="fas fa-terminal"></i> BTMOB 4.6 RAT
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- VPS Windows Section -->
+    <section id="vps" class="py-24 px-4 sm:px-6 lg:px-8 border-t border-gray-800/60 bg-panel/40">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="inline-block font-mono text-xs text-electric uppercase tracking-widest bg-electric/10 px-3 py-1 rounded border border-electric/20 mb-3">Hardware Dedicado</div>
+                <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-wide">Servidor VPS Windows RDP</h2>
+                <p class="text-gray-400 max-w-xl mx-auto mt-2 font-sans">Desempenho extremo para automações, bots, sistemas e operações contínuas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Card 1: VPS Standard 250 BRL -->
+                <div class="bg-panel rounded-3xl terminal-border p-8 sm:p-10 relative shadow-2xl glow-blue flex flex-col justify-between">
+                    <div class="absolute -top-4 right-8 bg-electric text-black text-xs font-black font-mono uppercase px-4 py-1.5 rounded-full tracking-wider shadow">
+                        Destaque 77DN
+                    </div>
+                    <div>
+                        <div class="mb-6">
+                            <span class="text-gray-400 text-xs font-mono font-semibold uppercase tracking-wider">Windows Server 2022</span>
+                            <h3 class="text-2xl font-black text-white mt-1 uppercase">VPS High Performance</h3>
+                        </div>
+
+                        <div class="space-y-4 mb-8 text-gray-300 text-sm font-mono">
+                            <div class="flex items-center justify-between pb-3 border-b border-gray-800">
+                                <span class="flex items-center gap-2 text-gray-400"><i class="fas fa-memory text-electric"></i> Memória RAM</span>
+                                <strong class="text-white text-base">8 GB DDR4</strong>
+                            </div>
+                            <div class="flex items-center justify-between pb-3 border-b border-gray-800">
+                                <span class="flex items-center gap-2 text-gray-400"><i class="fas fa-microchip text-electric"></i> Processador</span>
+                                <strong class="text-white text-base">4 vCPU</strong>
+                            </div>
+                            <div class="flex items-center justify-between pb-3 border-b border-gray-800">
+                                <span class="flex items-center gap-2 text-gray-400"><i class="fas fa-hdd text-electric"></i> Armazenamento</span>
+                                <strong class="text-white text-base">100 GB NVMe</strong>
+                            </div>
+                            <div class="flex items-center justify-between pb-3 border-b border-gray-800">
+                                <span class="flex items-center gap-2 text-gray-400"><i class="fas fa-network-wired text-electric"></i> Rede & IP</span>
+                                <strong class="text-white text-base">IPv4 Dedicado</strong>
+                            </div>
+                            <div class="flex items-center justify-between pb-3 border-b border-gray-800">
+                                <span class="flex items-center gap-2 text-gray-400"><i class="fas fa-shield-alt text-electric"></i> Proteção</span>
+                                <strong class="text-white text-base">Anti-DDoS Incluso</strong>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="flex items-center gap-2 text-gray-400"><i class="fas fa-bolt text-electric"></i> Tráfego</span>
+                                <strong class="text-white text-base">Ilimitado</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="bg-obsidian/80 rounded-2xl p-4 mb-6 border border-gray-800 text-center">
+                            <span class="text-xs text-gray-400 block uppercase font-mono">Investimento Mensal</span>
+                            <div class="text-4xl font-black text-electric text-glow mt-1">R$ 250 <span class="text-sm font-normal text-gray-400 font-sans">/ mês</span></div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="text-center text-xs font-mono font-semibold text-green-400 mb-2">🛡️ Garantia Total e Suporte Especializado</div>
+                            <a href="https://wa.me/551521210619?text=Olá!%20Quero%20contratar%20o%20VPS%20Windows%20Standard%20(8GB%20RAM%20/%20R$%20250)." target="_blank" rel="noopener noreferrer" class="block w-full text-center py-4 rounded-xl font-bold uppercase font-mono bg-gradient-to-r from-electric to-cyanblue text-black shadow-lg glow-blue hover:opacity-90 transition">
+                                <i class="fab fa-whatsapp mr-2"></i> Contratar via WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Custom / Dedicated Expansion -->
+                <div class="bg-panel rounded-3xl terminal-border p-8 sm:p-10 relative shadow-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="mb-6">
+                            <span class="text-gray-400 text-xs font-mono font-semibold uppercase tracking-wider">Infraestrutura Dedicada</span>
+                            <h3 class="text-2xl font-black text-white mt-1 uppercase">Servidores Customizados</h3>
+                        </div>
+
+                        <p class="text-gray-400 text-sm font-sans mb-6 leading-relaxed">
+                            Precisa de mais poder de processamento, múltiplos IPs dedicados ou um servidor dedicado inteiro (Dual Xeon) para seu negócio? Montamos a arquitetura ideal sob medida.
+                        </p>
+
+                        <ul class="space-y-3 text-sm font-mono text-gray-300 mb-8">
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-electric"></i> Múltiplos IPs dedicados</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-electric"></i> Servidores Dedicados completos</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-electric"></i> Migração assistida sem custo</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-electric"></i> Atendimento prioritário via WhatsApp</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="bg-obsidian/80 rounded-2xl p-4 mb-6 border border-gray-800 text-center">
+                            <span class="text-xs text-gray-400 block uppercase font-mono">Orçamento Personalizado</span>
+                            <div class="text-2xl font-black text-white mt-1 font-mono">Sob Consulta</div>
+                        </div>
+
+                        <a href="https://wa.me/551521210619?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20personalizado%20para%20servidor%20dedicado." target="_blank" rel="noopener noreferrer" class="block w-full text-center py-4 rounded-xl font-bold uppercase font-mono border border-electric text-electric hover:bg-electric/10 transition">
+                            <i class="fab fa-whatsapp mr-2"></i> Falar com Especialista
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BTMOB 4.6 Section -->
+    <section id="btmob" class="py-24 px-4 sm:px-6 lg:px-8 border-t border-gray-800/60">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="inline-block font-mono text-xs text-cyberred uppercase tracking-widest bg-cyberred/10 px-3 py-1 rounded border border-cyberred/20 mb-3">Ferramenta Exclusiva</div>
+                <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-wide text-cyberred text-glow-red">KL BTMOB 4.6 / BTMOB RAT</h2>
+                <p class="text-gray-400 max-w-xl mx-auto mt-2 font-sans">Tecnologia avançada com servidor de alta estabilidade incluso.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-panel rounded-3xl border border-cyberred/40 p-8 sm:p-12 shadow-2xl glow-red">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-10">
+                    <div>
+                        <span class="text-xs font-bold text-cyberred uppercase font-mono tracking-wider block mb-2">// SISTEMA DE GERENCIAMENTO</span>
+                        <h3 class="text-3xl sm:text-4xl font-black text-white mb-4 uppercase">BTMOB 4.6</h3>
+                        <p class="text-gray-400 text-sm font-sans leading-relaxed">
+                            Plataforma de alto desempenho. O aluguel semanal já inclui o servidor dedicado configurado e pronto para uso imediato.
+                        </p>
+                    </div>
+                    <div class="bg-obsidian border border-gray-800 p-6 rounded-2xl text-center space-y-2">
+                        <span class="text-xs uppercase font-mono font-semibold text-gray-400">Aluguel Semanal</span>
+                        <div class="text-4xl sm:text-5xl font-black text-cyberred text-glow-red font-mono">R$ 650</div>
+                        <span class="text-xs text-green-400 font-mono font-bold block">⚡ Servidor Incluso</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-gray-800 text-sm font-mono">
+                    <div class="bg-obsidian/60 p-5 rounded-2xl border border-gray-800 text-center">
+                        <span class="text-gray-400 block text-xs mb-1">Planos Mensais ou Vitalícios</span>
+                        <strong class="text-white text-base">Negociável no WhatsApp</strong>
+                    </div>
+                    <div class="bg-obsidian/60 p-5 rounded-2xl border border-gray-800 text-center">
+                        <span class="text-gray-400 block text-xs mb-1">Encrypter Personalizado</span>
+                        <strong class="text-white text-base">Disponível à parte</strong>
+                    </div>
+                </div>
+
+                <div class="mt-10 text-center">
+                    <div class="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-xl font-bold uppercase font-mono bg-cyberred text-white shadow-lg glow-red opacity-90" aria-label="Elemento visual da seção BTMOB">
+                        <i class="fab fa-whatsapp text-lg"></i> Fechar Negócio via WhatsApp
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Warranty & Trust Section -->
+    <section id="garantia" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-gray-800/60 bg-panel/30">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-black uppercase tracking-wide mb-12">Por que escolher a APEX CLOUD?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-panel p-8 rounded-2xl terminal-border">
+                    <div class="w-12 h-12 rounded-xl bg-electric/10 text-electric flex items-center justify-center text-xl font-bold mb-4 mx-auto glow-blue">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 uppercase font-mono">Anti-DDoS Avançado</h3>
+                    <p class="text-gray-400 text-sm font-sans">Proteção robusta em todos os IPs contra ataques volumétricos e interrupções.</p>
+                </div>
+                <div class="bg-panel p-8 rounded-2xl terminal-border">
+                    <div class="w-12 h-12 rounded-xl bg-electric/10 text-electric flex items-center justify-center text-xl font-bold mb-4 mx-auto glow-blue">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 uppercase font-mono">Uptime 99.9%</h3>
+                    <p class="text-gray-400 text-sm font-sans">Datacenter de alta disponibilidade com redundância e estabilidade contínua.</p>
+                </div>
+                <div class="bg-panel p-8 rounded-2xl terminal-border">
+                    <div class="w-12 h-12 rounded-xl bg-electric/10 text-electric flex items-center justify-center text-xl font-bold mb-4 mx-auto glow-blue">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 uppercase font-mono">Suporte Direto</h3>
+                    <p class="text-gray-400 text-sm font-sans">Atendimento ágil e especializado direto pelo WhatsApp sem burocracia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with Requested Legal Notice -->
+    <footer class="bg-obsidian border-t border-gray-800 py-16 px-4 sm:px-6 lg:px-8 text-center">
+        <div class="max-w-5xl mx-auto space-y-6">
+            <div class="flex items-center justify-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-electric via-cyanblue to-electric flex items-center justify-center font-black text-black text-lg shadow-lg glow-blue border border-electric/60">
+                    <span class="font-serif italic text-xl">$</span>RR
+                </div>
+                <span class="text-lg font-black tracking-wider text-white">APEX CLOUD HOST</span>
+            </div>
+            
+            <p class="text-gray-400 text-sm font-sans max-w-md mx-auto">
+                Infraestrutura de alta performance e revenda de servidores com total segurança e garantia.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 text-xs font-mono">
+                <a href="https://wa.me/551521210619?text=Olá!%20Preciso%20de%20atendimento%20pelo%20SAC%20da%20APEX%20CLOUD." target="_blank" rel="noopener noreferrer" class="text-electric hover:text-white transition">SAC / WhatsApp: (15) 2121-0619</a>
+                <span class="hidden sm:inline text-gray-700">|</span>
+                <span class="text-cyberred tracking-[0.25em] font-bold">DUBAI • UAE</span>
+            </div>
+            <div class="pt-6 border-t border-gray-900 text-xs font-mono text-gray-400">
+                by 77dn (Daniel Nascimento Corporation Ltda. - 1998 ®)
+            </div>
+            <div class="text-[10px] font-mono text-gray-600">
+                Todos os direitos reservados. Termos e condições aplicáveis.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
